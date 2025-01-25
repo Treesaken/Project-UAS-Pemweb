@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
 
@@ -22,15 +30,23 @@
                     <!-- Primary Navbar items -->
                     <div class="hidden md:flex items-center space-x-1">
                         <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Layanan</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Booking</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Testimoni</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Tentang Kami</a>
+                        <a href="#layanan" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Layanan</a>
+                        <a href="booking2.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Booking</a>
+                        <a href="#testimoni" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Testimoni</a>
+                        <a href="#tentangkami" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Tentang Kami</a>
                     </div>
                 </div>
                 <!-- Secondary Navbar items -->
                 <div class="hidden md:flex items-center space-x-3">
-                    <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Login</a>
+
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="bg-gray-100 rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <svg class="w-5 h-5 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    
+                    <a href="login.html" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Login</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
@@ -53,9 +69,10 @@
         <div class="hidden mobile-menu">
             <ul class="">
                 <li class="active"><a href="#" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
-                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</a></li>
-                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</a></li>
-                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact</a></li>
+                <li><a href="#layanan" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Layanan</a></li>
+                <li><a href="booking2.html" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Booking</a></li>
+                <li><a href="#testimoni" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Testimoni</a></li>
+                <li><a href="#tentangkami" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Tentang Kami</a></li>
             </ul>
         </div>
     </nav>
@@ -63,7 +80,7 @@
     <!-- Header Section -->
     <header class="bg-white py-5">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-between">
                 <div class="text-left mr-8 w-1/2 space-y-5">
                     <h1 class="text-5xl font-bold text-gray-800 leading-tight">Langkah Awal Menuju <br> Gigi Sehat dan <br> Percaya Diri</h1>
                     <h2 class="text-xl text-gray-600 font-semibold">Menyentuh aspek emosional, yaitu kepercayaan diri yang didapat dari gigi yang sehat.</h2>
@@ -98,46 +115,129 @@
         </div>
     </header>
 
-    <section>
+    <section id="jadwal-praktik">
         <!-- Jadwal Praktik Section -->
         <div class="bg-gray-50 py-12">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Jadwal Praktik</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Hari Senin -->
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Senin</h3>
                         <p class="text-gray-600">08:00 - 17:00</p>
                     </div>
-                    <!-- Hari Selasa -->
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Selasa</h3>
                         <p class="text-gray-600">08:00 - 17:00</p>
                     </div>
-                    <!-- Hari Rabu -->
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Rabu</h3>
                         <p class="text-gray-600">08:00 - 17:00</p>
                     </div>
-                    <!-- Hari Kamis -->
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Kamis</h3>
                         <p class="text-gray-600">08:00 - 17:00</p>
                     </div>
-                    <!-- Hari Jumat -->
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Jumat</h3>
                         <p class="text-gray-600">08:00 - 17:00</p>
                     </div>
-                    <!-- Hari Sabtu -->
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Sabtu</h3>
-                        <p class="text-gray-600">08:00 - 14:00</p>
-                    </div>
-                    <!-- Hari Minggu -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Minggu</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Sabtu & Minggu</h3>
                         <p class="text-gray-600">Tutup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan -->
+    <section id="layanan">
+        <div class="bg-white py-12">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Layanan</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="p-6 rounded-lg shadow-md flex items-center bg-white" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/scalling.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Scalling</h2>
+                        </div>
+                    </div>
+        
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/implan.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Implan Gigi</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/tambal gigi.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Tambal Gigi</h2>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/perawatan syaraf gigi.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Perawatan Syaraf Gigi</h2>
+                        </div>
+                    </div>
+        
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/behel gigi.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Behel Gigi</h2>
+                        </div>
+                    </div>
+        
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/veneer gigi.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Veneer Gigi</h2>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/bleaching gigi.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Bleaching Gigi</h2>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/perawatan gigi anak.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Perawatan Gigi Anak</h2>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/gigi tiruan.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Gigi Tiruan</h2>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/crown gigi.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Crown Gigi</h2>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-lg shadow-md flex items-center" style="border: 1px solid #D1D1D1;">
+                        <div>
+                            <img src="images/pencabutan gigi.svg" alt="" class="w-10 h-10">
+                            <h2 class="font-semibold text-gray-800 mb-2">Pencabutan Gigi</h2>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,129 +248,151 @@
     <section>
         <div class="bg-white py-12">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Daftar Dokter Gigi Kami</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Card 1: Drg Lulu Bintang -->
-                    <div class="p-6 rounded-lg flex items-center bg-white" style="border: 1px solid #D1D1D1;">
-                        <div>
-                            <img src="images/tambal gigi.svg" alt="">
-                            <h2 class="font-semibold text-gray-800 mb-2">Scalling</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Daftar Dokter</h2>
+
+                <div class="grid grid-cols-4 md:grid-cols-4 gap-8">
+                    <!-- Dokter 1 -->
+                    <a class="text-center border p-4 rounded-lg shadow-lg" href="drgbilal.html">
+                        <div class="w-full h-64 overflow-hidden rounded-lg shadow-lg">
+                            <img src="images/profil/bilal.jpg" alt="Drg. Muhamad Bilal Fatiha" class="w-full h-full object-cover">
                         </div>
+                        <h3 class="text-xl font-semibold mt-4">Drg. Muhammad Bilal Fatiha</h3>
+                        <p class="text-gray-600">Perawatan Gigi Umum</p>
+                    </a>
+    
+                    <!-- Dokter 2 -->
+                    <a class="text-center border p-4 rounded-lg shadow-lg" href="drgfatur.html">
+                        <div class="w-full h-64 overflow-hidden rounded-lg shadow-lg">
+                            <img src="images/profil/fatur.jpeg" alt="Drg. Faturahman" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">Drg. Faturrahman</h3>
+                        <p class="text-gray-600">Perawatan Gigi Anak</p>
+                    </a>
+                    <a class="text-center border p-4 rounded-lg shadow-lg" href="drgrahmat.html">
+                        <div class="w-full h-64 overflow-hidden rounded-lg shadow-lg">
+                            <img src="images/profil/rohmat.jpeg" alt="Drg. Nurrohmat" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">Drg. Nurrohmat</h3>
+                        <p class="text-gray-600">Perawatan Gigi Anak</p>
+                    </a>
+                    <a class="text-center border p-4 rounded-lg shadow-lg" href="drgadzani.html">
+                        <div class="w-full h-64 overflow-hidden rounded-lg shadow-lg">
+                            <img src="images/profil/adzani.jpeg" alt="Drg. Adzani" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">Drg. Adzani</h3>
+                        <p class="text-gray-600">Perawatan Gigi Anak</p>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Section About Us -->
+    <section class="py-12 bg-white" id="tentangkami">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Tentang Kami</h2>
+            <div class="flex md:flex-row items-center justify-between">
+                <div>
+                    <img src="images/image about us.svg" alt="" class="w-96 h-96 rounded-lg">
+                </div>
+
+                <div class="w-1/2 mx-auto px-4">
+        
+                    <!-- Patient-Centered Care -->
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Perawatan Berfokus pada Pasien</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Kami berdedikasi untuk memberikan perawatan gigi yang luar biasa dalam lingkungan yang hangat dan ramah. Tim kami yang berpengalaman, penuh kasih sayang, dan sangat terampil hadir untuk memastikan pengalaman dental Anda nyaman dan bebas stres.
+                        </p>
                     </div>
         
-                    <!-- Card 2: Drg Indra Budi -->
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background-color: #fee6dc;">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Implan Gigi</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
-                    </div>
-        
-                    <!-- Card 3: Drg Amelia -->
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background-color: #dff7ea;">
-                        <div>
-                            <img src="images/tambal gigi.svg" alt="" class="w-10 h-10">
-                            <h2 class="font-semibold text-gray-800 mb-2">Tambal Gigi</h2>
-                        </div>
-                    </div>
-        
-                    <!-- Card 4: Drg Putri Anisa -->
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background-color: #fee6dc;">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Perawatan Syaraf Gigi</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
-                    </div>
-        
-                    <!-- Card 5: Drg Rudi Hartono -->
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background-color: #dff7ea;">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Behel Gigi</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
-                    </div>
-        
-                    <!-- Card 6: Drg Siti Rahma -->
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background: linear-gradient(235deg, #FEEFC1 5%, rgba(254, 239, 193, 0.10) 95%);">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Veneer Gigi</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
-                    </div>
-
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background: linear-gradient(235deg, #FEEFC1 5%, rgba(254, 239, 193, 0.10) 95%);">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Bleaching Gigi</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
-                    </div>
-
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background: linear-gradient(235deg, #FEEFC1 5%, rgba(254, 239, 193, 0.10) 95%);">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Perawatan Gigi Anak</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
-                    </div>
-
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background: linear-gradient(235deg, #FEEFC1 5%, rgba(254, 239, 193, 0.10) 95%);">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Gigi Tiruan</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
-                    </div>
-
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background: linear-gradient(235deg, #FEEFC1 5%, rgba(254, 239, 193, 0.10) 95%);">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Crown Gigi</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
-                    </div>
-
-                    <div class="p-6 rounded-lg shadow-md flex items-center" style="background: linear-gradient(235deg, #FEEFC1 5%, rgba(254, 239, 193, 0.10) 95%);">
-                        <div>
-                            <h2 class="font-semibold text-gray-800 mb-2">Pencabutan Gigi</h2>
-                            <a href="#" class="inline-block mt-4 bg-white text-black font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Lihat Profil</a>
-                        </div>
+                    <!-- Our Mission -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Misi Kami</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Di 57Dentcare, misi kami adalah mempromosikan kesehatan mulut yang optimal dan menciptakan senyuman yang percaya diri dan tahan lama.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
+    <section id="testimoni">
+        <div class="max-w-full" style="background-image: url('images/bg-testimoni.png');">
+            <div class="container mx-auto px-4 py-12" x-data="{ currentIndex: 0 }">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold">Testimoni</h2>
+                </div>
+                <div class="relative overflow-hidden">
+                    <div class="flex transition-transform duration-300 ease-in-out" :style="`transform: translateX(-${currentIndex * 100}%)`">
+                        <!-- Testimonial 1 -->
+                        <div class="min-w-full flex-shrink-0 p-4">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <p class="text-gray-700">"Saya sangat terkesan dengan pelayanan yang cepat dan ramah. Dokter gigi sangat profesional dan peralatannya modern. <br> Terima kasih atas pelayanan yang memuaskan!"</p>
+                                <p class="mt-4 font-semibold">Budi Santoso</p>
+                                <p class="text-sm text-gray-600">Jakarta, Indonesia</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="min-w-full flex-shrink-0 p-4">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <p class="text-gray-700">"Pengalaman berobat di sini sangat menyenangkan. Stafnya ramah dan prosesnya tidak berbelit-belit. Sangat recommended!"</p>
+                                <p class="mt-4 font-semibold">Ani Wijaya</p>
+                                <p class="text-sm text-gray-600">Bandung, Indonesia</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="min-w-full flex-shrink-0 p-4">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <p class="text-gray-700">"Saya datang dalam keadaan darurat dan langsung ditangani dengan cepat. Dokter sangat ahli dan perawatannya sangat <br> memuaskan. Terima kasih banyak!"</p>
+                                <p class="mt-4 font-semibold">Rudi Hermawan</p>
+                                <p class="text-sm text-gray-600">Surabaya, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8">
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg mx-2" @click="currentIndex = (currentIndex - 1 + 3) % 3"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg mx-2" @click="currentIndex = (currentIndex + 1) % 3"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-white text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
 
                 <div>
-                    <h2 class="font-bold mb-4">Dental Excellence</h2>
+                    <h2 class="font-bold mb-4 text-black">Dental Excellence</h2>
                     <ul class="space-y-2">
-                        <li><a href="" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="" class="text-gray-400 hover:text-white">Layanan</a></li>
-                        <li><a href="" class="text-gray-400 hover:text-white">Booking</a></li>
-                        <li><a href="" class="text-gray-400 hover:text-white">Testimoni</a></li>
-                        <li><a href="" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="" class="text-black hover:text-green-500">Home</a></li>
+                        <li><a href="" class="text-black hover:text-green-500">Layanan</a></li>
+                        <li><a href="" class="text-black hover:text-green-500">Booking</a></li>
+                        <li><a href="" class="text-black hover:text-green-500">Testimoni</a></li>
+                        <li><a href="" class="text-black hover:text-green-500">Tentang Kami</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h2 class="font-bold mb-4">Kontak</h2>
+                    <h2 class="font-bold mb-4 text-black">Kontak</h2>
                     <ul class="space-y-2">
-                        <li><p class="text-gray-400">+62 812 3456 7890</p></li>
-                        <li><p class="text-gray-400">dentalexcellence@gmail.com</p></li>
+                        <li><p class="text-gray-500">+62 812 3456 7890</p></li>
+                        <li><p class="text-gray-500">dentalexcellence@gmail.com</p></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h2 class="font-bold mb-4">Lokasi</h2>
+                    <h2 class="font-bold mb-4 text-black">Lokasi</h2>
                     <ul class="space-y-2">
-                        <li><p class="text-gray-400">123 Dental Avenue City ville, State 12345 United States</p></li>
+                        <li><p class="text-gray-500">123 Dental Avenue City ville, State 12345 United States</p></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h2 class="font-bold mb-4">Ikuti Media Sosial Kami</h2>
+                    <h2 class="font-bold mb-4 text-black">Ikuti Media Sosial Kami</h2>
                     <ul class="space-y-2">
                         <li><a href=""></a></li>
                     </ul>
